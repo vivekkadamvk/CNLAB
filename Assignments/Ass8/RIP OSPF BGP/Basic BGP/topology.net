@@ -1,0 +1,178 @@
+autostart = False
+version = 0.8.2
+[127.0.0.1:7200]
+    workingdir = C:\Users\HW\AppData\Local\Temp
+    udp = 10000
+    [[3725]]
+        image = D:\Cisco\Unpacked\c3725-adventerprisek9_ivs-mz.124-25b\C3725-AD.BIN
+        ram = 128
+        idlepc = 0x60b10334
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R1]]
+        model = 3725
+        console = 2001
+        aux = 2501
+        cnfg = configs\R1.cfg
+        f0/0 = BORDER_1 f0/1
+        x = -296.171572875
+        y = 95.0
+        z = 1.0
+        hx = 25.5
+        hy = 40.0
+    [[ROUTER R2]]
+        model = 3725
+        console = 2004
+        aux = 2504
+        cnfg = configs\R2.cfg
+        f0/0 = BORDER_2 f0/1
+        x = -33.0
+        y = 98.0
+        z = 1.0
+        hx = 21.5
+        hy = 45.0
+    [[ROUTER BORDER_2]]
+        model = 3725
+        console = 2003
+        aux = 2503
+        cnfg = configs\BORDER_2.cfg
+        f0/0 = BORDER_1 f0/0
+        f0/1 = R2 f0/0
+        x = -33.0
+        y = -96.0
+        z = 1.0
+        hx = -2.5
+        hy = -25.0
+    [[ROUTER BORDER_1]]
+        model = 3725
+        console = 2002
+        aux = 2502
+        cnfg = configs\BORDER_1.cfg
+        f0/0 = BORDER_2 f0/0
+        f0/1 = R1 f0/0
+        x = -297.0
+        y = -97.0
+        z = 1.0
+        hx = -0.5
+        hy = -25.0
+[GNS3-DATA]
+    configs = configs
+    m11 = 1.0
+    m22 = 1.0
+    [[NOTE 1]]
+        text = .2
+        x = -297.0
+        y = 67.0
+        color = "#3086bc"
+    [[NOTE 2]]
+        text = .2
+        x = 9.0
+        y = 68.0
+        color = "#3086bc"
+    [[NOTE 3]]
+        text = .2
+        x = -56.0
+        y = -102.0
+        color = "#3086bc"
+    [[NOTE 4]]
+        text = .1
+        x = 9.0
+        y = -54.0
+        color = "#3086bc"
+    [[NOTE 5]]
+        text = .1
+        x = -294.0
+        y = -56.0
+        color = "#3086bc"
+    [[NOTE 6]]
+        text = .1
+        x = -218.0
+        y = -97.0
+        color = "#3086bc"
+    [[NOTE 7]]
+        text = 192.168.0.0/24
+        x = -375.0
+        y = 2.0
+        color = "#3086bc"
+    [[NOTE 8]]
+        text = 192.168.100.0/24
+        x = 3.0
+        y = 4.0
+        color = "#3086bc"
+    [[NOTE 9]]
+        text = 10.0.0.0/30
+        x = -168.0
+        y = -109.0
+        color = "#3086bc"
+    [[NOTE 10]]
+        text = AS 64530
+        x = -10.0
+        y = -162.0
+        font = "MS Shell Dlg 2,12,-1,5,50,0,0,0,0,0"
+        color = "#aa0000"
+    [[NOTE 11]]
+        text = AS 64520
+        x = -318.0
+        y = -167.0
+        font = "MS Shell Dlg 2,12,-1,5,50,0,0,0,0,0"
+        color = "#aa0000"
+    [[NOTE 12]]
+        text = f0/0
+        x = -7.0
+        y = -29.0
+        interface = R2 f0/0
+        font = "MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0"
+        color = "#595959"
+    [[NOTE 13]]
+        text = f0/1
+        x = -5.0
+        y = 51.0
+        interface = BORDER_2 f0/1
+        font = "MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0"
+        color = "#595959"
+    [[NOTE 14]]
+        text = f0/0
+        x = -44.0
+        y = 24.0
+        interface = BORDER_2 f0/0
+        font = "MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0"
+        color = "#595959"
+    [[NOTE 15]]
+        text = f0/1
+        x = 35.9640685223
+        y = 46.9999838616
+        interface = BORDER_1 f0/1
+        font = "MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0"
+        color = "#595959"
+    [[NOTE 16]]
+        text = f0/0
+        x = 73.0
+        y = 22.0
+        interface = BORDER_1 f0/0
+        font = "MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0"
+        color = "#595959"
+    [[NOTE 17]]
+        text = f0/0
+        x = 38.0359314777
+        y = -25.9999838616
+        interface = R1 f0/0
+        font = "MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0"
+        color = "#595959"
+    [[SHAPE 1]]
+        type = rectangle
+        x = -81.0
+        y = -179.0
+        width = 214.0
+        height = 365.0
+        fill_color = "#ffff7f"
+        border_color = "#595959"
+        border_style = 2
+    [[SHAPE 2]]
+        type = rectangle
+        x = -380.0
+        y = -180.0
+        width = 209.0
+        height = 365.0
+        fill_color = "#fff3c0"
+        border_color = "#595959"
+        border_style = 2
